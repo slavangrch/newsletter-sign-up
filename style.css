@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root{
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-slate-grey);
+}
+
+.form {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    border-radius: 20px;
+    padding: 15px;
+    height: 70%;
+}
+
+.wrapper {
+    margin: auto 40px;
+    color: var(--dark-slate-grey);
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin: 15px 0;
+    line-height: 140%;
+}
+
+.features {
+    margin: 15px 0 25px 0;
+    position: relative;
+}
+
+.feature-item {
+    margin-bottom: 10px;
+    list-style: none;
+
+}
+
+.feature-item::before {
+    content: url(assets/images/icon-list.svg);
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--dark-slate-grey);
+}
+
+input {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: var(--dark-slate-grey);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
