@@ -5,6 +5,8 @@
     --charcoal-grey: hsl(235, 18%, 26%);
     --grey: hsl(231, 7%, 60%);
     --white: hsl(0, 0%, 100%);
+    --tomato: hsla(4, 100%, 67%, 0.941);
+    --tomato-light: hsla(4, 100%, 67%, 0.23);
 }
 
 * {
@@ -27,6 +29,8 @@ body {
     background-color: var(--white);
     display: flex;
     justify-content: space-between;
+    min-width: 900px;
+    max-width: 1000px;
     width: 80%;
     border-radius: 20px;
     padding: 15px;
@@ -34,7 +38,11 @@ body {
 }
 
 .wrapper {
-    margin: auto 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 40px;
+    height: 100%;
     color: var(--dark-slate-grey);
 }
 
@@ -51,12 +59,11 @@ p {
 .features {
     margin: 15px 0 25px 0;
     position: relative;
+    list-style: none;
 }
 
 .feature-item {
     margin-bottom: 10px;
-    list-style: none;
-
 }
 
 .feature-item::before {
@@ -83,10 +90,12 @@ input {
     font-family: inherit;
     font-size: inherit;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
 .btn {
-    background-color: var(--dark-slate-grey);
+    display: inline-block;
+    background: var(--dark-slate-grey);
     color: var(--white);
     border: none;
     border-radius: 5px;
@@ -94,9 +103,14 @@ input {
     padding: 15px;
     width: 100%;
     cursor: pointer;
+    transition: background 0.3s ease-in;
 }
 
-img {
+.btn:hover {
+    background: linear-gradient(to right,hsl(339, 67%, 54%), hsl(4, 100%, 67%));
+}
+
+.desktop-pic {
     width: 100%;
     object-fit: contain;
     height: 100%;
@@ -104,3 +118,83 @@ img {
     background-size: cover;
 }
 
+.mobile-pic {
+    display: none;
+}
+
+.success-icon {
+    margin-bottom: 13px;
+}
+
+.form.success {
+    flex-direction: column;
+    max-width: 500px;
+    min-width: 500px;
+    border-radius: 20px;
+    padding: 13px;
+    height: 500px;
+}
+
+.email-address {
+    font-weight: 600;
+}
+
+.error-state input {
+    background-color: var(--tomato-light);
+    border: 1px solid var(--tomato);
+    color: var(--tomato);
+    position: relative;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-message {
+    display: none;
+}
+
+.error-state .error-message {
+    display: inline-block;
+    color: var(--tomato);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 550px) {
+    body {
+        overflow: hidden;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .form {
+        padding: 0;
+        flex-direction: column;
+        min-width: 550px;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .desktop-pic {
+        display: none;
+    }
+
+    .mobile-pic {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .form.success {
+        border-radius: 0;
+        height: 100%;
+    }
+
+}
